@@ -1,0 +1,6 @@
+[submodule "question-answering-system-machine-learning-python-api"]
+	path = question-answering-system-machine-learning-python-api
+	url = https://github.com/qasim9872/question-answering-system-machine-learning-python-api.git
+[submodule "question-answering-system-main-js-api"]
+	path = question-answering-system-main-js-api
+	url = https://github.com/qasim9872/question-answering-system-main-js-api.git

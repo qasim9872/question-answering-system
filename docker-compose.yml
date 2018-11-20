@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  graph-db:
+    # image: ontotext/graphdb:8.6.0-se
+    image: manasrk/graphdb-free
+    container_name: graph-db
+    ports: 
+      - "7200:7200"
+    volumes:
+      - "./db-data:/opt/graphdb/home"
+    networks:
+      - back-tier
+
+# volumes:
+#   db-data: "$(pwd)/db-data"
+
+networks:
+  front-tier:
+  back-tier:
