@@ -12,6 +12,17 @@ services:
     networks:
       - back-tier
 
+  node-api:
+    build: ./question-answering-system-main-js-api
+    image: node-api
+    ports:
+      - '8000:8000'
+    environment:
+      - NODE_ENV=test
+    networks:
+      - back-tier
+
+
 # volumes:
 #   db-data: "$(pwd)/db-data"
 
