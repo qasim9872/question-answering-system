@@ -1,27 +1,53 @@
 version: "3"
 
 services:
-  graph-db:
-    # image: ontotext/graphdb:8.6.0-se
-    image: manasrk/graphdb-free
-    container_name: graph-db
-    ports: 
-      - "7200:7200"
-    volumes:
-      - "./db-data:/opt/graphdb/home"
-    networks:
-      - back-tier
+  # graph-db:
+  #   # image: ontotext/graphdb:8.6.0-se
+  #   image: manasrk/graphdb-free
+  #   container_name: graph-db
+  #   restart: always
+  #   ports: 
+  #     - "7200:7200"
+  #   volumes:
+  #     - "./db-data:/opt/graphdb/home"
+  #   networks:
+  #     - back-tier
 
-  node-api:
-    build: ./question-answering-system-main-js-api
-    image: node-api
+  # node-api:
+  #   build: ./question-answering-system-main-js-api
+  #   container_name: node-api
+  #   image: node-api
+  #   restart: always
+  #   ports:
+  #     - '8000:8000'
+  #   environment:
+  #     - NODE_ENV=test
+  #   networks:
+  #     - back-tier
+
+  front-end:
+    build: ./question-answering-system-frontend/
+    container_name: frontend
+    image: frontend
+    restart: always
     ports:
-      - '8000:8000'
-    environment:
-      - NODE_ENV=test
+      - "3000:3000"
+    networks:
+      - front-tier
+      - back-tier
+    command:
+      "npm run start"
+
+  nmt:
+    build: ./question-answering-system-machine-learning-python-api
+    container_name: nmt
+    image: nmt
+    restart: always
+    ports:
+      - '6542:6542'
     networks:
       - back-tier
-
+    
 
 # volumes:
 #   db-data: "$(pwd)/db-data"
