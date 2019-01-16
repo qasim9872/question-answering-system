@@ -13,17 +13,25 @@ services:
   #   networks:
   #     - back-tier
 
-  # node-api:
-  #   build: ./question-answering-system-main-js-api
-  #   container_name: node-api
-  #   image: node-api
-  #   restart: always
-  #   ports:
-  #     - '8000:8000'
-  #   environment:
-  #     - NODE_ENV=test
-  #   networks:
-  #     - back-tier
+  mongo:
+    image: mongo:3.6
+    ports:
+     - "27017:27017"
+
+  node-api:
+    build: ./question-answering-system-main-js-api
+    container_name: node-api
+    image: node-api
+    restart: always
+    ports:
+      - '8000:8000'
+    environment:
+      - NODE_ENV=test
+    networks:
+      - back-tier
+    depends_on: 
+     - nmt
+     - mongo
 
   front-end:
     build: ./qa-system-app
@@ -37,6 +45,8 @@ services:
       - back-tier
     command:
       "npm run start"
+    depends_on: 
+     - node-api
 
   nmt:
     build: ./question-answering-system-machine-learning-python-api
