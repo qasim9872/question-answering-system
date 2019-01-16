@@ -4,3 +4,6 @@
 [submodule "question-answering-system-main-js-api"]
 	path = question-answering-system-main-js-api
 	url = https://github.com/qasim9872/question-answering-system-main-js-api.git
+[submodule "qa-system-app"]
+	path = qa-system-app
+	url = https://github.com/qasim9872/qa-system-app.git
