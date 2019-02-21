@@ -15,8 +15,12 @@ services:
 
   mongo:
     image: mongo:3.6
+    container_name: mongo
+    restart: always
     ports:
      - "27017:27017"
+    networks:
+      - back-tier
 
   node-api:
     build: ./question-answering-system-main-js-api
