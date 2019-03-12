@@ -30,7 +30,8 @@ services:
     ports:
       - '8000:8000'
     environment:
-      - NODE_ENV=test
+      - NODE_ENV=production
+      - DB_HOST=mongo
     networks:
       - back-tier
     depends_on: 
