@@ -32,6 +32,7 @@ services:
     environment:
       - NODE_ENV=production
       - DB_HOST=mongo
+      # - NMT_URL=mongo
     networks:
       - back-tier
     depends_on: 
@@ -45,6 +46,9 @@ services:
     restart: always
     ports:
       - "3000:3000"
+    environment:
+      # PUBLIC IP OF INSTANCE
+      - HOST=35.178.196.213
     networks:
       - front-tier
       - back-tier
