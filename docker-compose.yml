@@ -34,7 +34,7 @@ services:
     environment:
       - NODE_ENV=production
       - DB_HOST=mongo
-      # - NMT_URL=mongo
+      - MONGOMS_PLATFORM=ubuntu
     networks:
       - back-tier
     depends_on: 
