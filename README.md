@@ -6,18 +6,18 @@ Please make sure you have docker installed and running
 
 ## Installation
 
-Please clone this repository using the following command. This will clone and initialise all the submodules
+Please clone this repository using the following command. This will clone and initialise all the submodules  
 git clone --recurse-submodules -j8 https://github.com/qasim9872/question-answering-system.git
 
-To run all the microservices, run the following command:
+To run all the microservices, run the following command:  
 docker-compose up (Run with sudo if necessary)
 
 ## USEFUL COMMANDS
 
-Update all submodule to match the latest remote commit
+Update all submodule to match the latest remote commit  
 git submodule update --remote --merge
 
-Initialise and updates the submodules recursively
+Initialise and updates the submodules recursively  
 git submodule update --init --recursive
 
 ## Citations
