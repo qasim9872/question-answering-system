@@ -14,6 +14,10 @@ git clone --recurse-submodules -j8 https://github.com/qasim9872/question-answeri
 To run all the microservices, run the following command:  
 docker-compose up (Run with sudo if necessary)
 
+## API documentation
+
+The API has been documented using Swagger and can be found at: http://35.178.196.213:8000/api-docs
+
 ## USEFUL COMMANDS
 
 Update all submodule to match the latest remote commit  
