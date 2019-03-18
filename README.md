@@ -1,5 +1,7 @@
 # question-answering-system
 
+The deployed version of this application can be found at: http://35.178.196.213:3000/
+
 ## Pre requisite
 
 Please make sure you have docker installed and running
