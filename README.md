@@ -8,10 +8,10 @@ Please make sure you have docker installed and running
 
 ## Installation
 
-Please clone this repository using the following command. This will clone and initialise all the submodules  
+Please clone this repository using the following command. This will clone and initialize all the submodules  
 git clone --recurse-submodules -j8 https://github.com/qasim9872/question-answering-system.git
 
-To run all the microservices, run the following command:  
+To run all the micro services, run the following command:  
 docker-compose up (Run with sudo if necessary)
 
 ## API documentation
@@ -23,12 +23,12 @@ The API has been documented using Swagger and can be found at: http://35.178.196
 Update all submodule to match the latest remote commit  
 git submodule update --remote --merge
 
-Initialise and updates the submodules recursively  
+Initialize and updates the submodules recursively  
 git submodule update --init --recursive
 
 ## Citations
 
-The following were used for generating the dataset including pairs of english sentences with the associated SPARQL query.
+The following were used for generating the dataset including pairs of English sentences with the associated SPARQL query.
 
 ```
 @inproceedings{soru-marx-2017,
