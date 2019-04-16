@@ -13,16 +13,16 @@ services:
   #   networks:
   #     - back-tier
 
-  mongo:
-    image: mongo:4.0.3
-    container_name: mongo
-    restart: always
-    ports:
-     - "27017:27017"
-    volumes: 
-      - "./data:/data/db"
-    networks:
-      - back-tier
+  # mongo:
+  #   image: mongo:4.0.3
+  #   container_name: mongo
+  #   restart: always
+  #   ports:
+  #    - "27017:27017"
+  #   volumes: 
+  #     - "./data:/data/db"
+  #   networks:
+  #     - back-tier
 
   node-api:
     build: ./question-answering-system-main-js-api
@@ -33,12 +33,12 @@ services:
       - '8000:8000'
     environment:
       - NODE_ENV=production
-      - DB_HOST=mongo
+      # - DB_HOST=mongo
     networks:
       - back-tier
     depends_on: 
      - nmt
-     - mongo
+    #  - mongo
 
   front-end:
     build: ./qa-system-app
