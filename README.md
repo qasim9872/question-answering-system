@@ -11,8 +11,9 @@ Please make sure you have docker installed and running
 Please clone this repository using the following command. This will clone and initialize all the submodules  
 git clone --recurse-submodules -j8 https://github.com/qasim9872/question-answering-system.git
 
-To run all the micro services, run the following command:  
-docker-compose up (Run with sudo if necessary)
+To run all the micro services, run the following commands:
+cd (into the project folder)  
+docker-compose -f ./docker-compose.local.yml up (Run with sudo if necessary)
 
 ## API documentation
 

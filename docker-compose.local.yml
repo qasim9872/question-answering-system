@@ -10,7 +10,8 @@ services:
     ports:
       - '8000:8000'
     environment:
-      - NODE_ENV=production
+      - NODE_ENV=development
+      - NMT_URL=http://nmt:6542
     networks:
       - back-tier
     depends_on: 
@@ -23,11 +24,13 @@ services:
     restart: always
     ports:
       - "3000:3000"
+    environment:
+      - API_URL=http://node-api:8000/
     networks:
       - front-tier
       - back-tier
     command:
-      "npm run start"
+      "npm run dev"
     depends_on: 
      - node-api
 
